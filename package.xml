@@ -1,0 +1,23 @@
+<--! Coloque este arquivo na raiz do seu pacote: ~/ros2_ws/src/py_srvcli/) -->
+
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>py_srvcli</name>
+  <version>0.0.1</version>
+  <description>Exemplo de Cliente e Servidor em Python para ROS2</description>
+  <maintainer email="seu_email@example.com">seu_nome</maintainer>
+  <license>Apache-2.0</license>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <depend>rclpy</depend>
+  <depend>example_interfaces</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
