@@ -6,7 +6,7 @@
   <name>py_srvcli</name>
   <version>0.0.1</version>
   <description>Exemplo de Cliente e Servidor em Python para ROS2</description>
-  <maintainer email="seu_email@example.com">seu_nome</maintainer>
+  <maintainer email="diego.demiranda@icloud.com">Diego de Miranda</maintainer>
   <license>Apache-2.0</license>
 
   <test_depend>ament_copyright</test_depend>
