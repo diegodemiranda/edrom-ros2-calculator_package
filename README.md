@@ -14,6 +14,7 @@ Este projeto utiliza o tipo de serviço `AddTwoInts`, que já vem definido no pa
 * Ubuntu 22.04 (ou compatível)
 * ROS2 Humble Hawksbill (ou uma versão mais recente)
 * Ferramentas de construção `colcon`
+* Git
 
 ## Estrutura do Projeto
 
@@ -34,52 +35,45 @@ ros2_ws/
 
 ## Guia de Instalação e Execução
 
+Siga os passos abaixo para clonar, construir e executar os nós.
+
 ### 1. Crie um Workspace ROS2
 
-Se você ainda não tiver um, crie um workspace e a pasta `src`:
+Se você ainda não tiver um workspace (`ros2_ws`), crie um e navegue até a pasta `src`:
 
 ```bash
 mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws
+cd ~/ros2_ws/src
 ```
 
-### 2. Crie o Pacote do Projeto
+### 2. Clone o Repositório
 
-Dentro da pasta `src`, crie um novo pacote Python para este projeto. É crucial adicionar a dependência `example_interfaces`, que contém a definição do serviço `AddTwoInts`.
+Dentro da pasta `src`, clone este repositório. O comando abaixo irá baixar o pacote na pasta `py_srvcli`, que é o nome do nosso pacote.
 
 ```bash
-cd src
-ros2 pkg create --build-type ament_python py_srvcli --dependencies rclpy example_interfaces
+git clone <https://github.com/diegodemiranda/edrom-ros2-calculator_package.git> py_srvcli
 ```
 
-Isso criará uma pasta `py_srvcli` com a estrutura necessária.
+### 3. Construa o Pacote
 
-### 3. Adicione os Arquivos de Código
-
-Coloque os arquivos `calculator_server.py` e `calculator_client.py` (cujos códigos estão na seção "Código Fonte" abaixo) dentro da pasta `py_srvcli/py_srvcli/`.
-
-Edite o arquivo `setup.py` na raiz do pacote (`py_srvcli/`) para registrar os executáveis dos nós.
-
-### 4. Construa o Pacote
-
-Volte para a raiz do seu workspace (`~/ros2_ws`) e use `colcon` para construir o novo pacote:
+Volte para a raiz do seu workspace (`~/ros2_ws`) e use `colcon` para construir o pacote clonado:
 
 ```bash
 cd ~/ros2_ws
 colcon build --packages-select py_srvcli
 ```
 
-### 5. Configure o Ambiente
+### 4. Configure o Ambiente
 
-Após a construção, "fonte" o ambiente para que o ROS2 reconheça os novos executáveis:
+Após a construção ser concluída com sucesso, "fonte" o ambiente para que o ROS2 reconheça os novos executáveis:
 
 ```bash
 source install/setup.bash
 ```
 
-### 6. Execute os Nós
+### 5. Execute os Nós
 
-Você precisará de dois terminais. A ordem de execução é importante: o servidor deve estar rodando antes que o cliente possa fazer uma requisição.
+Agora, você está pronto para executar o sistema. Você precisará de dois terminais separados. A ordem de execução é importante: o servidor deve estar rodando antes que o cliente possa fazer uma requisição.
 
 * **Terminal 1: Execute o `calculator_server`**
 
