@@ -39,7 +39,7 @@ Isso criará uma pasta `py_srvcli` com a estrutura necessária.
 
 ### 3. Adicione os Arquivos de Código
 
-Coloque os arquivos `calculator_server.py` e `calculator_client.py` (cujos códigos estão na seção "Código Fonte" abaixo) dentro da pasta `py_srvcli/py_srvcli/`.
+Coloque os arquivos `calculator_server.py` e `calculator_client.py` dentro da pasta `py_srvcli/py_srvcli/`.
 
 Edite o arquivo `setup.py` na raiz do pacote (`py_srvcli/`) para registrar os executáveis dos nós.
 
