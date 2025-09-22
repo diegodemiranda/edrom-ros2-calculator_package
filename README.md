@@ -1,4 +1,4 @@
-# Exemplo de Cliente e Servidor em ROS2 com Python 🤖
+# Exemplo de Cliente e Servidor em ROS2 com Python
 
 Este repositório demonstra a comunicação síncrona (requisição/resposta) em ROS2 através de um sistema cliente-servidor simples. Diferente dos tópicos (comunicação assíncrona), os serviços são ideais para tarefas que exigem uma confirmação ou um resultado direto.
 
@@ -14,6 +14,23 @@ Este projeto utiliza o tipo de serviço `AddTwoInts`, que já vem definido no pa
 * Ubuntu 22.04 (ou compatível)
 * ROS2 Humble Hawksbill (ou uma versão mais recente)
 * Ferramentas de construção `colcon`
+
+## Estrutura do Projeto
+
+O projeto está organizado como um pacote ROS2 do tipo `ament_python`, seguindo a estrutura padrão.
+
+```
+ros2_ws/
+└── src/
+    └── py_srvcli/
+        ├── package.xml
+        ├── setup.py
+        ├── setup.cfg
+        └── py_srvcli/
+            ├── __init__.py
+            ├── calculator_server.py  # Nó servidor
+            └── calculator_client.py  # Nó cliente
+```
 
 ## Guia de Instalação e Execução
 
@@ -39,7 +56,7 @@ Isso criará uma pasta `py_srvcli` com a estrutura necessária.
 
 ### 3. Adicione os Arquivos de Código
 
-Coloque os arquivos `calculator_server.py` e `calculator_client.py` dentro da pasta `py_srvcli/py_srvcli/`.
+Coloque os arquivos `calculator_server.py` e `calculator_client.py` (cujos códigos estão na seção "Código Fonte" abaixo) dentro da pasta `py_srvcli/py_srvcli/`.
 
 Edite o arquivo `setup.py` na raiz do pacote (`py_srvcli/`) para registrar os executáveis dos nós.
 
