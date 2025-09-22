@@ -1,4 +1,4 @@
-# Exemplo de Cliente e Servidor em ROS2 com Python
+# Exemplo de Cliente e Servidor em ROS2 com Python 🤖
 
 Este repositório demonstra a comunicação síncrona (requisição/resposta) em ROS2 através de um sistema cliente-servidor simples. Diferente dos tópicos (comunicação assíncrona), os serviços são ideais para tarefas que exigem uma confirmação ou um resultado direto.
 
